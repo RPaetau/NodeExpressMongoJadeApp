@@ -10,16 +10,17 @@ var ObjectId = require('mongodb').ObjectID;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var exercise = require('./routes/exercise');
 
 var app = express();
 
 var mongoUri = 'mongodb://localhost:27017/test';
-mongoClient.connect(mongoUri, function (err, db) {
-	assert.equal(null, err);
-	console.log("Connected to mongodb");
-	insertDocument(db, function () { });
-	db.close();
-});
+//mongoClient.connect(mongoUri, function (err, db) {
+//	assert.equal(null, err);
+//	console.log("Connected to mongodb");
+//	insertDocument(db, function () { });
+	
+//});
 
 
 // view engine setup
@@ -37,6 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/exercise', exercise);
+app.use('/createExercise', exercise);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -100,6 +105,7 @@ var insertDocument = function (db, callback) {
 	}, function (err, result) {
 		assert.equal(err, null);
 		console.log("Inserted a document into the restaurants collection.");
-		callback(result);
+        callback(result);
+        db.close();
 	});
 };

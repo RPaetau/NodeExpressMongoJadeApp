@@ -1,0 +1,29 @@
+﻿extends layout
+
+block content
+
+    form(method="post" action="/createExercise")
+      label(for="comment") Save an exercise
+      br
+      input(type="text", name="ExerciseName",  placeholder="ExerciseName")
+      input(type="text", name="Description",  placeholder="Description")
+      input(type="number", name="Set", placeholder="Set")
+      input(type="text", name="RepetitionsTime",  placeholder="RepetitionsTime")
+      input(type="submit", value="Save")
+    br 
+
+    div
+        table
+            thead
+                tr
+                    th Exercise Name
+                    th Decription
+                    th Set
+                    th Repetitions Time
+            tbody
+                each post in stuff
+                    tr
+                        td=post.ExerciseName 
+                        td=post.Description
+                        td=post.Set    
+                        td=post.RepetitionsTime 

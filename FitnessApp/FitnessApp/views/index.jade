@@ -3,3 +3,16 @@
 block content
   h1= title
   p Welcome to #{title}
+      
+    form(method="post" action="/index")
+      label(for="comment") Save an exercise
+      input(type="text", name="ExerciseName", value="ExerciseName")
+      input(type="text", name="Description", value="Description")
+      input(type="number", name="Set", value=0)
+      input(type="text", name="RepetitionsTime", value="Repetitions Time")
+      input(type="submit", value="Save")
+    br 
+
+      
+    - for comment, index in stuff
+      p=index
