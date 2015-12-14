@@ -34,6 +34,7 @@
     <Compile Include="routes\exercise.js" />
     <Compile Include="routes\exerciseProgram.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\programLog.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
@@ -55,6 +56,7 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="views\programLog.jade" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="bin\ChangeConfig.ps1" />

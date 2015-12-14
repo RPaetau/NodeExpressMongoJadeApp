@@ -73,7 +73,7 @@ router.post('/', function (req, res) {
             db.close();
             obj = null;
             
-            res.redirect('exerciseProgram');
+            res.redirect('/exerciseProgram');
         });
     });
 

@@ -8,16 +8,16 @@ var mongoUri = 'mongodb://localhost:27017/test';
 var stuff = [];
 /* GET home page. */
 router.get('/', function (req, res) {
-	
-    mongoClient.connect(mongoUri, function (err, db) {
-        console.log("got here");
-		assert.equal(null, err);
-		findRestaurants(db, function () {
-            db.close();
+    res.redirect('/exercise');
+ //   mongoClient.connect(mongoUri, function (err, db) {
+ //       console.log("got here");
+	//	assert.equal(null, err);
+	//	findRestaurants(db, function () {
+ //           db.close();
 
-            res.render('index', { title: 'Express', stuff: stuff });
-		});
-	});
+ //           res.render('index', { title: 'Express', stuff: stuff });
+	//	});
+	//});
 	
 	
 /* POST form. */

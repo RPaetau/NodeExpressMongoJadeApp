@@ -1,0 +1,41 @@
+﻿extends layout
+
+block content       
+        each post in exercisePrograms
+            form(action='/createProgramLog', method='POST',role='form')
+                input(type="hidden" name="programToSave" value=post._id.id)
+                div
+                    table
+                        thead
+                            tr
+                                th Exercises in program:
+                        tbody
+                            if post
+                                each item in post.program
+                                    tr
+
+                                            td=item
+                                            td 
+                input(type="submit", value="Save")
+                                                
+        div
+            table
+                thead
+                    tr
+                        th Time
+                        th Program name
+                tbody
+                    each programLog in programLogs
+                        tr
+                            td=programLog.datetime
+                            td
+                                div
+                                    table
+                                        thead
+                                            tr
+                                                th Exercises in program:
+                                        tbody
+                                            if programLog.program
+                                                each item in programLog.program
+                                                    tr
+                                                            td=item
