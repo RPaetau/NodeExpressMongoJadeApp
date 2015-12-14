@@ -3,5 +3,13 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+  body(class='container')
     block content
+
+    div
+            a(href='/exercise').btn.btn.default.
+                Exercises
+            a(href='/exerciseProgram').btn.btn.default.
+                Exercise program
