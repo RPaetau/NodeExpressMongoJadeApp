@@ -20,3 +20,15 @@ block content
                             td
                                 input(type='checkbox',name=post.ExerciseName)
             input(type="submit", value="Save")
+       
+        each post in exercisePrograms
+            div
+                table
+                    thead
+                        tr
+                            th Exercise Name
+                    tbody
+                        if post
+                            each item in post.program
+                                tr
+                                    td=item
