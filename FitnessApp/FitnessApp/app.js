@@ -11,6 +11,7 @@ var ObjectId = require('mongodb').ObjectID;
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var exercise = require('./routes/exercise');
+var exerciseProgram = require('./routes/exerciseProgram');
 
 var app = express();
 
@@ -40,7 +41,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/exercise', exercise);
 app.use('/createExercise', exercise);
-
+app.use('/exerciseProgram', exerciseProgram);
+app.use('/createExerciseProgram', exerciseProgram);
 
 
 // catch 404 and forward to error handler

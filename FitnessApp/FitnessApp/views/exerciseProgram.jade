@@ -1,0 +1,22 @@
+﻿extends layout
+
+block content
+    form(action='/createExerciseProgram', method='POST',role='form')
+        div
+            table
+                thead
+                    tr
+                        th Exercise Name
+                        th Decription
+                        th Set
+                        th Repetitions Time
+                tbody
+                    each post in stuff
+                        tr
+                            td=post.ExerciseName 
+                            td=post.Description
+                            td=post.Set    
+                            td=post.RepetitionsTime 
+                            td
+                                input(type='checkbox',name=post.ExerciseName)
+            input(type="submit", value="Save")
