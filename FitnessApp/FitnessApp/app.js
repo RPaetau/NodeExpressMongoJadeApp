@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var exercise = require('./routes/exercise');
 var exerciseProgram = require('./routes/exerciseProgram');
+var programLog = require('./routes/programLog');
 
 var app = express();
 
@@ -43,7 +44,8 @@ app.use('/exercise', exercise);
 app.use('/createExercise', exercise);
 app.use('/exerciseProgram', exerciseProgram);
 app.use('/createExerciseProgram', exerciseProgram);
-
+app.use('/programLog', programLog);
+app.use('/createProgramLog', programLog);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
